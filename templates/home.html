@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block head_title%}
+	{{title}}
+{%endblock%}
+
+{%block content%}
+hi {{title}} 
+
+{%if user.is_authenticated %}
+{{user}}
+{{user.is_authenticated}}
+
+{%for a in list%}
+<p>{{a}}</p>
+{%endfor%}
+{%endif%}
+
+
+
+ here
+{%endblock%}
