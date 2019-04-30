@@ -18,10 +18,17 @@ from django.urls import path,re_path,include #url
 
 from .views import home_page,about_page,contact_page,courses_page,example_page
 from blog.views import blog_post_create_view
+from accounts.views import login_view,register_view,logout_view
 
 urlpatterns = [
-	path('', home_page),
+    path('accounts/register/',register_view),
+    path('accounts/login/',login_view),
+    path('accounts/logout/',logout_view),
+	
+    path('', home_page),
 	path('home/', home_page),
+    
+   
     
     path('blog/', include('blog.urls')),
     path('blog-new/', blog_post_create_view),

@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
+from django.contrib.auth.decorators import login_required
 
 from .forms import ContactForm
 
+@login_required
 def home_page(request):
 	context={"title":'home'}
 	if request.user.is_authenticated:

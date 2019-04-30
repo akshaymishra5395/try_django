@@ -5,11 +5,13 @@
 {%endblock%}
 
 {%block content%}
+
 hi {{title}} 
 
 {%if user.is_authenticated %}
 {{user}}
 {{user.is_authenticated}}
+<a href="accounts/logout/">Logout</a>
 
 {%for a in list%}
 <p>{{a}}</p>
